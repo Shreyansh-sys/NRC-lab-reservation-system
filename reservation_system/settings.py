@@ -135,7 +135,8 @@ SIMPLE_JWT = {
 # CORS Settings
 if RENDER:
     CORS_ALLOWED_ORIGINS = [
-        "http://nrc-lab-reservation-system-rf8sr8k51.vercel.app",  # Update after Vercel deployment
+        "http://nrc-lab-reservation-system-rf8sr8k51.vercel.app",  
+        "https://nrc-lab-reservation-system.vercel.app/dashboard",# Update after Vercel deployment
         "http://localhost:3000",
         "http://127.0.0.1:3000",
     ]
