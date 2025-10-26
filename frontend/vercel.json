@@ -1,7 +1,6 @@
 {
   "routes": [
     {
-      "src": "/manifest.json",
       "headers": {
         "Cache-Control": "public, max-age=3600",
         "Content-Type": "application/json"
@@ -14,7 +13,6 @@
   ],
   "headers": [
     {
-      "source": "/manifest.json",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",

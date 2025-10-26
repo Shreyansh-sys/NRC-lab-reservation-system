@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Allow manifest.json to be accessed without authentication
-MANIFEST_JSON_ACCESS = True
+# MANIFEST_JSON_ACCESS = True
 
 # REST Framework configuration
 REST_FRAMEWORK = {
