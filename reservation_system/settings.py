@@ -116,12 +116,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# Allow manifest.json to be accessed without authentication
+MANIFEST_JSON_ACCESS = True
+
 # REST Framework configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
