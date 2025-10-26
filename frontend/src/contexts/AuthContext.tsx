@@ -20,7 +20,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     // Check if user is logged in on app start
+    // const currentUser = authService.getCurrentUser();    UNDO
+    console.log('🔄 AuthProvider useEffect running...');
     const currentUser = authService.getCurrentUser();
+    console.log('👤 Current user from localStorage:', currentUser);
     if (currentUser) {
       setUser(currentUser);
     }
