@@ -133,23 +133,72 @@ SIMPLE_JWT = {
 }
 
 # CORS Settings
+# if RENDER:
+#     CORS_ALLOWED_ORIGINS = [
+#         "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app",
+#         "http://nrc-lab-reservation-system-rf8sr8k51.vercel.app",  
+#         "https://nrc-lab-reservation-system.vercel.app",# Update after Vercel deployment
+#         "http://localhost:3000",
+#         "http://127.0.0.1:3000",
+#     ]
+#     CORS_ALLOW_ALL_ORIGINS = False
+# else:
+#     CORS_ALLOWED_ORIGINS = [
+#         "http://localhost:3000",
+#         "http://127.0.0.1:3000",
+#     ]
+#     CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
+
+# CORS Settings
 if RENDER:
     CORS_ALLOWED_ORIGINS = [
         "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app",
-        "http://nrc-lab-reservation-system-rf8sr8k51.vercel.app",  
-        "https://nrc-lab-reservation-system.vercel.app",# Update after Vercel deployment
+        "https://nrc-lab-reservation-system.vercel.app",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://localhost:3000",
     ]
     CORS_ALLOW_ALL_ORIGINS = False
+    
+    # Add CSRF trusted origins
+    CSRF_TRUSTED_ORIGINS = [
+        "https://nrc-lab-reservation-system.vercel.app",
+        "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app",
+        "https://nrc-lab-reservation-system-backend.onrender.com",
+    ]
 else:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://localhost:3000",
     ]
     CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
+
+# Add these additional CORS configurations
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -162,6 +211,9 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
+# Preflight requests can be cached for 1 hour
+CORS_PREFLIGHT_MAX_AGE = 3600
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
