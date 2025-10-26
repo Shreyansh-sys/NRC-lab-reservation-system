@@ -17,7 +17,7 @@ RENDER = os.getenv('RENDER', 'False').lower() == 'true'
 if RENDER:
     DEBUG = False
     ALLOWED_HOSTS = [
-        'nrc-lab-reservation-system-backend.onrender.com'
+        'nrc-lab-reservation-system-backend.onrender.com',
         'localhost',
         '127.0.0.1', 
         '.onrender.com',
@@ -135,6 +135,7 @@ SIMPLE_JWT = {
 # CORS Settings
 if RENDER:
     CORS_ALLOWED_ORIGINS = [
+        "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app"
         "http://nrc-lab-reservation-system-rf8sr8k51.vercel.app",  
         "https://nrc-lab-reservation-system.vercel.app",# Update after Vercel deployment
         "http://localhost:3000",
