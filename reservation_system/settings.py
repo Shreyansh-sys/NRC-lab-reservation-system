@@ -173,6 +173,7 @@ if RENDER:
     CORS_ALLOWED_ORIGINS = [
         "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app",
         "https://nrc-lab-reservation-system.vercel.app",
+        "nrc-lab-reservation-system-dbatfd2ed.vercel.app",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://localhost:3000",
@@ -183,6 +184,7 @@ if RENDER:
     CSRF_TRUSTED_ORIGINS = [
         "https://nrc-lab-reservation-system.vercel.app",
         "https://nrc-lab-reservation-sys-git-28ce89-shreyanshs-projects-7dbd6bed.vercel.app",
+        "nrc-lab-reservation-system-dbatfd2ed.vercel.app",
         "https://nrc-lab-reservation-system-backend.onrender.com",
     ]
 else:
