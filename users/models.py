@@ -10,7 +10,7 @@ class User(AbstractUser):
     ]
     
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='student')
-    institution_id = models.CharField(max_length=50, unique=False, blank=True, null=True)
+    institution_id = models.CharField(max_length=50, blank=True, null=True)
     department = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=20, blank=True)
     is_approved = models.BooleanField(default=False)
